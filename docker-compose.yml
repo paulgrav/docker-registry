@@ -1,0 +1,13 @@
+proxy:
+  build: .
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - reg
+reg:
+  image: registry:2
+  environment:
+    - REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry
+  volumes:
+    - /repo:/var/lib/registry

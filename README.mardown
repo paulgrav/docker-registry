@@ -1,5 +1,10 @@
+Creates a docker registry with nginx used as a reverse proxy. nginx will also
+terminate SSL and require auth using basic auth.
+
 Requires docker-compose
 
-1. `docker-compose build`
-2. `docker-compose up -d`
+1. `mkdir certs`
+2. copy htpasswd file and certificates to the certs/ dir
+3. `docker-compose build`
+4. `docker-compose up -d`
 
